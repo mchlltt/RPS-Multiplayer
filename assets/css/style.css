@@ -1,0 +1,48 @@
+body {
+    font-family: 'Lato', Verdana, Arial;
+    max-width: 94vw;
+    min-height: 96vh;
+    padding: 2vh 2vw;
+}
+
+p, span {
+    font-size: 24px;
+    letter-spacing: .5px;
+    margin: 0;
+}
+
+.game-row {
+    display: flex;
+    height: 30vh;
+    justify-content: space-between;
+    min-height: 300px;
+}
+
+.box {
+    background: lightgray;
+    border: 0 solid transparent;
+    border-radius: 5px;
+    height: 100%;
+    text-align: center;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin: 2vh 0;
+    text-align: center;
+}
+
+section {
+    clear: both;
+}
+
+.box-chat {
+    color: navy;
+}
