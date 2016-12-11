@@ -16,37 +16,75 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <!-- <link rel="icon" href="assets/images/favicon.png"> -->
-    <!-- App script -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
     <!-- Firebase script -->
     <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+    <!-- App script -->
+    <script type="text/javascript" src="app.js"></script>
 </head>
 
 <body class="center-block">
     <header class="center-block">
         <h1>Rock Paper Scissors</h1>
+        <div class="error-message">Error: Two players are already playing. Please wait for one of them to leave before the app will function for you.</div>
     </header>
-    <section class="game center-block">
-        <form>
-            <div class="form-group">
-                <label for="userName">Your name</label>
-                <input id="userName" placeholder="name">
-                <button class="btn btn-success" type="submit" id="submit-button">Submit</button>
-            </div>
-        </form>
+    <section class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+            <form class="user-form">
+                <div class="form-group">
+                    <label for="username">Your name</label>
+                    <input id="username" placeholder="Name" class="form-control" type="text">
+                    <button class="btn btn-success" type="submit" id="submit-name">Start</button>
+                </div>
+            </form>
+            <p class="hello">Hello [name]! You are player 1.</p>
+        </div>
     </section>
     <main>
-        <div class="row game-row">
-            <div class="col-xs-12 col-sm-4 box box-1">a</div>
-            <div class="col-xs-12 col-sm-4 box box-result">b</div>
-            <div class="col-xs-12 col-sm-4 box box-2">c</div>
+        <div class="row game-row ">
+            <div class="col-xs-12 col-sm-4 box box-1">
+                <p class="name name-1"></p>
+                <div class="dynamic-box">
+                    <p class="waiting waiting-1">Waiting for Player 1</p>
+                    <div class="moves moves-1">
+                        <p class="move" data-choice="r" data-text="rock" role="button">rock</p>
+                        <p class="move" data-choice="p" data-text="paper" role="button">paper</p>
+                        <p class="move" data-choice="s" data-text="scissors" role="button">scissors</p>
+                    </div>
+                    <div class="choice choice-1"></div>
+                </div>
+                <p class="win-loss win-loss-1"></p>
+            </div>
+            <div class="col-xs-12 col-sm-4 box dynamic-box box-result">
+                <p class="turn"></p>
+                <p class="winner"></p>
+            </div>
+            <div class="col-xs-12 col-sm-4 box box-2">
+                <p class="name name-2"></p>
+                <div class="dynamic-box">
+                    <p class="waiting waiting-2">Waiting for Player 2</p>
+                    <div class="moves moves-2">
+                        <p class="move" data-choice="r" data-text="rock" role="button">rock</p>
+                        <p class="move" data-choice="p" data-text="paper" role="button">paper</p>
+                        <p class="move" data-choice="s" data-text="scissors" role="button">scissors</p>
+                    </div>
+                    <div class="choice choice-2"></div>
+                </div>
+                <p class="win-loss win-loss-2"></p>
+            </div>
+        </div>
+        <div class="row chat-row">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+                <div class="box box-chat">
+                    <div class="messages"></div>
+                </div>
+                <form class="chat-form">
+                    <label for="message">Message:</label>
+                    <input id="message" placeholder="Type a message..." class="form-control" type="text">
+                    <button class="btn btn-success" type="submit" id="submit-chat">Send</button>
+                </form>
+            </div>
         </div>
     </main>
-    <section class="chat center-block">
-        <div class="row chat-row">
-            <div class="col-xs-12 col-sm-4 offset-sm-4 box box-chat">chat</div>
-        </div>
-    </section>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 body {
-    font-family: 'Lato', Verdana, Arial;
+    font-family: 'Lato', Verdana, Arial, sans-serif;
     max-width: 94vw;
     min-height: 96vh;
     padding: 2vh 2vw;
@@ -7,27 +7,39 @@ body {
 
 p, span {
     font-size: 24px;
-    letter-spacing: .5px;
+    letter-spacing: 1px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .game-row {
     display: flex;
-    height: 30vh;
     justify-content: space-between;
-    min-height: 300px;
+    margin-bottom: 25px;
+    height: 300px;
+}
+
+.chat-row {
+    height: 300px;
 }
 
 .box {
     background: lightgray;
     border: 0 solid transparent;
     border-radius: 5px;
-    height: 100%;
+    height: 280px;
+    margin: 10px;
     text-align: center;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 98%;
 }
 
 h1 {
@@ -39,10 +51,67 @@ h1 {
     text-align: center;
 }
 
-section {
-    clear: both;
+.box-chat {
+    width: 100%;
+    margin-left: 0;
 }
 
-.box-chat {
-    color: navy;
+.btn {
+    height: 30px;
+    padding: 0 4px;
+}
+
+.form-control {
+    margin: 0.5% auto;
+    width: 100%;
+}
+
+.messages {
+    text-align: left;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+.hello,
+.moves,
+.choice,
+.turn,
+.error-message,
+.chat-row {
+    display: none;
+    text-align: center;
+}
+
+.dynamic-box {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+}
+
+.box-result {
+    height: 280px;
+}
+
+.moves {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name,
+.win-loss {
+    height: 15%;
+}
+
+.choice {
+    font-size: 75px;
+}
+
+@media only screen and (max-width: 640px) {
+    .game-row {
+        display: block;
+    }
 }
